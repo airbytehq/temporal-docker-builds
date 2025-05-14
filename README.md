@@ -61,3 +61,9 @@ Replace **YOUR_TAG** and **YOUR_CHECKOUT_COMMIT** to build manually:
 git checkout YOUR_CHECKOUT_COMMIT
 docker build . -f auto-setup.Dockerfile -t temporalio/auto-setup:YOUR_TAG
 ```
+
+## Deploy patched version to airbyte repository
+```bash
+make IMAGE_TAG=1.27 EXTRA_ARGS=--push docker-auto-setup
+```
+

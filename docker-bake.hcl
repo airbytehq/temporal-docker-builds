@@ -4,7 +4,7 @@ variable "platforms" {
 }
 
 variable "IMAGE_REPO" {
-  default = "temporaliotest"
+  default = "airbyte"
 }
 
 variable "IMAGE_TAG" {
@@ -35,7 +35,7 @@ target "server" {
   dockerfile = "server.Dockerfile"
   target = "server"
   tags = [
-    "${IMAGE_REPO}/server:${IMAGE_TAG}",
+    "${IMAGE_REPO}/temporal-server:${IMAGE_TAG}",
     TAG_LATEST ? "${IMAGE_REPO}/server:latest" : ""
   ]
   platforms = platforms
@@ -55,8 +55,8 @@ target "server" {
 target "admin-tools" {
   dockerfile = "admin-tools.Dockerfile"
   tags = [
-    "${IMAGE_REPO}/admin-tools:${IMAGE_TAG}",
-    TAG_LATEST ? "${IMAGE_REPO}/admin-tools:latest" : ""
+    "${IMAGE_REPO}/temporal-admin-tools:${IMAGE_TAG}",
+    TAG_LATEST ? "${IMAGE_REPO}/temporal-admin-tools:latest" : ""
   ]
   platforms = platforms
   contexts = {
@@ -75,8 +75,8 @@ target "auto-setup" {
   dockerfile = "server.Dockerfile"
   target = "auto-setup"
   tags = [
-    "${IMAGE_REPO}/auto-setup:${IMAGE_TAG}",
-    TAG_LATEST ? "${IMAGE_REPO}/auto-setup:latest" : ""
+    "${IMAGE_REPO}/temporal-auto-setup:${IMAGE_TAG}",
+    TAG_LATEST ? "${IMAGE_REPO}/temporal-auto-setup:latest" : ""
   ]
   platforms = platforms
   contexts = {

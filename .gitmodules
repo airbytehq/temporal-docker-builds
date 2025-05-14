@@ -1,6 +1,6 @@
 [submodule "temporal"]
 	path = temporal
-	url = https://github.com/temporalio/temporal
+	url = git@github.com:airbytehq/temporal.git
 	branch = release/v1.27.x
 [submodule "tctl"]
 	path = tctl

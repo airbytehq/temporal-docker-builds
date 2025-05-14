@@ -8,8 +8,6 @@ FROM temporaliotest/server as server
 FROM ${BASE_ADMIN_TOOLS_IMAGE} as temporal-admin-tools
 ARG TARGETARCH
 
-COPY ./build/${TARGETARCH}/tctl /usr/local/bin
-COPY ./build/${TARGETARCH}/tctl-authorization-plugin /usr/local/bin
 COPY ./build/${TARGETARCH}/temporal /usr/local/bin
 COPY ./build/${TARGETARCH}/temporal-cassandra-tool /usr/local/bin
 COPY ./build/${TARGETARCH}/temporal-sql-tool /usr/local/bin
